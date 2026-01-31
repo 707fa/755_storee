@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import './HomePage.css'
 import logo from '../assets/755.jpg'
 
@@ -56,24 +57,59 @@ const contactButtons = [
 ]
 
 export default function HomePage() {
+    // Stable random positions for background text
+    const backgroundItems = useMemo(() => {
+        return [...Array(24)].map((_, i) => ({
+            id: i,
+            // Grid-based positioning with randomness
+            left: `${(i % 4) * 25 + Math.random() * 15}%`,
+            top: `${Math.floor(i / 4) * 16.6 + Math.random() * 10}%`,
+            rotation: -25 + Math.random() * 50,
+            scale: 0.8 + Math.random() * 0.6,
+            opacity: 0.1 + Math.random() * 0.15,
+            delay: Math.random() * 2,
+        }))
+    }, [])
+
     return (
-        <div className="min-h-screen bg-[#c9b896] flex items-center justify-center p-4 font-sans">
+        <div className="min-h-screen bg-[#c9b896] flex items-center justify-center p-4 font-sans overflow-hidden">
             {/* Background text pattern */}
-            <div className="fixed inset-0 overflow-hidden pointer-events-none">
-                {[...Array(30)].map((_, i) => (
+            <div className="fixed inset-0 pointer-events-none select-none">
+                {backgroundItems.map((item) => (
                     <span
-                        key={i}
-                        className="absolute text-white/20 font-bold text-xl sm:text-2xl md:text-3xl whitespace-nowrap select-none"
+                        key={item.id}
+                        className="absolute text-white font-bold whitespace-nowrap hidden sm:block overflow-visible"
                         style={{
-                            left: `${(i % 6) * 18 + Math.random() * 10}%`,
-                            top: `${Math.floor(i / 6) * 18 + Math.random() * 10}%`,
-                            transform: `rotate(${-15 + Math.random() * 30}deg)`,
+                            left: item.left,
+                            top: item.top,
+                            transform: `rotate(${item.rotation}deg) scale(${item.scale})`,
+                            opacity: item.opacity,
+                            fontSize: '1.5rem',
+                            filter: 'blur(0.5px)',
+                        }}
+                    >
+                        755_store
+                    </span>
+                ))}
+
+                {/* Mobile version with fewer items and better spacing */}
+                {[...Array(12)].map((_, i) => (
+                    <span
+                        key={`mobile-${i}`}
+                        className="absolute text-white font-bold whitespace-nowrap block sm:hidden"
+                        style={{
+                            left: `${(i % 2) * 50 + 5 + Math.random() * 15}%`,
+                            top: `${(i / 2) * 16.6 + Math.random() * 5}%`,
+                            transform: `rotate(${-20 + Math.random() * 40}deg) scale(${0.7 + Math.random() * 0.4})`,
+                            opacity: 0.12,
+                            fontSize: '1.2rem',
                         }}
                     >
                         755_store
                     </span>
                 ))}
             </div>
+
 
             {/* Glass card */}
             <div className="relative bg-white/[0.80] backdrop-blur-xl border border-[#d4c4a8] rounded-3xl p-8 md:p-12 max-w-md w-full text-center animate-[fadeIn_0.8s_ease-out]">
