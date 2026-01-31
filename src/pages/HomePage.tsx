@@ -6,8 +6,8 @@ import logo from '../assets/755.jpg'
 const contactButtons = [
     {
         id: 'phone1',
-        label: 'Телефон 1',
-        href: 'tel:+71234567890',
+        label: 'Админ 1',
+        href: 'tel:+998998012424',
         gradient: 'from-[#c9b896] to-[#c9b896]',
         hoverGradient: 'hover:from-[#c9b896] hover:to-[#c9b896]',
         icon: (
@@ -18,8 +18,8 @@ const contactButtons = [
     },
     {
         id: 'phone2',
-        label: 'Телефон 2',
-        href: 'tel:+70987654321',
+        label: 'Админ 2',
+        href: 'tel:+998978778177',
         gradient: 'from-[#c9b896] to-[#c9b896]',
         hoverGradient: 'hover:from-[#c9b896] hover:to-[#c9b896]',
         icon: (
@@ -31,7 +31,7 @@ const contactButtons = [
     {
         id: 'instagram',
         label: 'Instagram',
-        href: 'https://instagram.com/your_username',
+        href: 'https://www.instagram.com/755storee?igsh=bGZ2b2J0M2g5eWtv',
         gradient: 'from-pink-500 via-rose-500 to-orange-400',
         hoverGradient: 'hover:from-pink-400 hover:via-rose-400 hover:to-orange-300',
         external: true,
@@ -44,7 +44,7 @@ const contactButtons = [
     {
         id: 'telegram',
         label: 'Telegram канал',
-        href: 'https://t.me/your_channel',
+        href: 'https://t.me/store755',
         gradient: 'from-sky-500 to-blue-600',
         hoverGradient: 'hover:from-sky-400 hover:to-blue-500',
         external: true,
