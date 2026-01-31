@@ -8,8 +8,8 @@ const contactButtons = [
         id: 'phone1',
         label: 'Телефон 1',
         href: 'tel:+71234567890',
-        gradient: 'from-black to-black',
-        hoverGradient: 'hover:from-black hover:to-black',
+        gradient: 'from-[#c9b896] to-[#c9b896]',
+        hoverGradient: 'hover:from-[#b8a88a] hover:to-[#b8a88a]',
         icon: (
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -20,8 +20,8 @@ const contactButtons = [
         id: 'phone2',
         label: 'Телефон 2',
         href: 'tel:+70987654321',
-        gradient: 'from-black to-black',
-        hoverGradient: 'hover:from-black hover:to-black',
+        gradient: 'from-[#c9b896] to-[#c9b896]',
+        hoverGradient: 'hover:from-[#b8a88a] hover:to-[#b8a88a]',
         icon: (
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -100,9 +100,9 @@ export default function HomePage() {
                         style={{
                             left: `${(i % 2) * 50 + 5 + Math.random() * 15}%`,
                             top: `${(i / 2) * 16.6 + Math.random() * 5}%`,
-                            transform: `rotate(${-20 + Math.random() * 40}deg) scale(${0.7 + Math.random() * 0.4})`,
-                            opacity: 0.12,
-                            fontSize: '1.2rem',
+                            transform: `rotate(${-20 + Math.random() * 40}deg) scale(${1.0 + Math.random() * 0.5})`,
+                            opacity: 0.25,
+                            fontSize: '1.8rem',
                         }}
                     >
                         755_store
